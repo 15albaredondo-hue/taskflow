@@ -1,21 +1,17 @@
-const togglePassword = document.querySelector(".toggle-password");
+/// ==========================
+// INICIALIZAR APLICACIÓN
+// ==========================
 
-const password = document.querySelector("#password");
+document.addEventListener("DOMContentLoaded", () => {
 
-togglePassword.addEventListener("click", () => {
+    initLogin();
 
-    if(password.type === "password"){
+    initTaskForm();
 
-        password.type = "text";
+    initCharacterCounter();
 
-        togglePassword.innerHTML = '<i class="fa-solid fa-eye-slash"></i>';
+    loadTasks();
 
-    }else{
-
-        password.type = "password";
-
-        togglePassword.innerHTML = '<i class="fa-solid fa-eye"></i>';
-
-    }
+    updateStats();
 
 });
