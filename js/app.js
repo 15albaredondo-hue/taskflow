@@ -10,6 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     initCharacterCounter();
 
+    loadTaskToEdit();
+
     loadTasks();
 
     updateStats();

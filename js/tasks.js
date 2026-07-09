@@ -23,8 +23,6 @@ function initTaskForm() {
         const date = document.querySelector("#date").value;
         const category = document.querySelector("#category").value;
 
-        // Validación
-
         if (
             title === "" ||
             description === "" ||
@@ -38,11 +36,12 @@ function initTaskForm() {
 
         }
 
-        // Crear objeto tarea
+        const params = new URLSearchParams(window.location.search);
+        const editId = Number(params.get("id"));
 
         const task = {
 
-            id: Date.now(),
+            id: editId || Date.now(),
             title,
             description,
             priority,
@@ -52,25 +51,31 @@ function initTaskForm() {
 
         };
 
-        // Obtener tareas existentes
-
         const tasks = getTasks();
 
-        // Añadir nueva tarea
+        if (editId) {
 
-        tasks.push(task);
+            const index = tasks.findIndex(task => task.id === editId);
 
-        // Guardar en LocalStorage
+            if (index !== -1) {
+
+                task.completed = tasks[index].completed;
+
+                tasks[index] = task;
+
+            }
+
+        } else {
+
+            tasks.push(task);
+
+        }
 
         saveTasks(tasks);
 
-        console.log("Tareas guardadas:", tasks);
-
-        showToast("Tarea creada correctamente.", "success");
+        showToast("Tarea guardada correctamente.", "success");
 
         taskForm.reset();
-
-        // Redireccionar al Dashboard
 
         setTimeout(() => {
 
@@ -119,5 +124,39 @@ function deleteTask(id) {
     updateStats();
 
     showToast("Tarea eliminada correctamente.", "success");
+
+}
+
+// ==========================
+// CARGAR TAREA PARA EDITAR
+// ==========================
+
+function loadTaskToEdit() {
+
+    const params = new URLSearchParams(window.location.search);
+
+    const id = Number(params.get("id"));
+
+    if (!id) return;
+
+    const tasks = getTasks();
+
+    const task = tasks.find(task => task.id === id);
+
+    if (!task) return;
+
+    document.querySelector("#title").value = task.title;
+    document.querySelector("#description").value = task.description;
+    document.querySelector("#priority").value = task.priority;
+    document.querySelector("#date").value = task.date;
+    document.querySelector("#category").value = task.category;
+
+    const submitButton = document.querySelector("button[type='submit']");
+
+    if (submitButton) {
+
+        submitButton.textContent = "Guardar cambios";
+
+    }
 
 }
