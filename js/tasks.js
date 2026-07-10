@@ -41,13 +41,23 @@ function initTaskForm() {
 
         const task = {
 
-            id: editId || Date.now(),
+            id: Date.now(),
+
             title,
+
             description,
+
             priority,
-            date,
+
+            dueDate: date,
+
             category,
-            completed: false
+
+            status: "TO_DO",
+
+            createdAt: new Date().toISOString(),
+
+            updatedAt: null
 
         };
 
@@ -59,7 +69,13 @@ function initTaskForm() {
 
             if (index !== -1) {
 
-                task.completed = tasks[index].completed;
+                task.id = editId;
+
+                task.status = tasks[index].status;
+
+                task.createdAt = tasks[index].createdAt;
+
+                task.updatedAt = new Date().toISOString();
 
                 tasks[index] = task;
 
@@ -148,7 +164,7 @@ function loadTaskToEdit() {
     document.querySelector("#title").value = task.title;
     document.querySelector("#description").value = task.description;
     document.querySelector("#priority").value = task.priority;
-    document.querySelector("#date").value = task.date;
+    document.querySelector("#date").value = task.dueDate;
     document.querySelector("#category").value = task.category;
 
     const submitButton = document.querySelector("button[type='submit']");
@@ -158,5 +174,39 @@ function loadTaskToEdit() {
         submitButton.textContent = "Guardar cambios";
 
     }
+    }
+    
+
+
+
+    // ==========================
+// ACTUALIZAR ESTADO
+// ==========================
+
+function updateTaskStatus(id, status) {
+
+    console.log("Cambio de estado:", id, status);
+
+    const tasks = getTasks();
+
+    const task = tasks.find(task => task.id === id);
+
+    if (!task) return;
+
+    task.status = status;
+
+    task.updatedAt = new Date().toISOString();
+
+    saveTasks(tasks);
+
+    loadTasks();
+
+    updateStats();
+
+    showToast("Estado actualizado.", "success");
 
 }
+
+
+   
+

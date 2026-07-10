@@ -28,18 +28,45 @@ function loadTasks() {
 
             <div class="task-info">
 
-                <span class="category">
-                    📁 ${task.category}
-                </span>
+    <span class="category">
+        📁 ${task.category}
+    </span>
 
-                <span class="priority ${task.priority.toLowerCase()}">
-                    ${task.priority}
-                </span>
+    <span class="priority ${task.priority.toLowerCase()}">
+        ${task.priority}
+    </span>
 
-            </div>
+</div>
+
+<div class="task-status">
+
+    <label>Estado</label>
+
+    <select
+        class="status-select"
+        data-id="${task.id}">
+
+        <option value="TO_DO"
+            ${task.status === "TO_DO" ? "selected" : ""}>
+            🟡 Pendiente
+        </option>
+
+        <option value="IN_PROGRESS"
+            ${task.status === "IN_PROGRESS" ? "selected" : ""}>
+            🔵 En progreso
+        </option>
+
+        <option value="DONE"
+            ${task.status === "DONE" ? "selected" : ""}>
+            🟢 Completada
+        </option>
+
+    </select>
+
+</div>
 
             <p class="task-date">
-                📅 ${task.date}
+                📅 ${task.dueDate}
             </p>
 
             <div class="task-buttons">
@@ -86,6 +113,17 @@ function loadTasks() {
 
         });
 
+        const statusSelect = card.querySelector(".status-select");
+
+statusSelect.addEventListener("change", (event) => {
+
+    updateTaskStatus(
+        task.id,
+        event.target.value
+    );
+
+});
+
     });
 
 }
@@ -100,20 +138,22 @@ function updateStats() {
 
     const total = tasks.length;
 
-    const pending = tasks.filter(task => !task.completed).length;
+    const pending = tasks.filter(task =>
+        task.status === "TO_DO"
+    ).length;
 
-    const completed = tasks.filter(task => task.completed).length;
+    const progress = tasks.filter(task =>
+        task.status === "IN_PROGRESS"
+    ).length;
 
-    const progress = 0;
+    const completed = tasks.filter(task =>
+        task.status === "DONE"
+    ).length;
 
-    const totalCount = document.querySelector("#totalCount");
-    const pendingCount = document.querySelector("#pendingCount");
-    const completedCount = document.querySelector("#completedCount");
-    const progressCount = document.querySelector("#progressCount");
-
-    if (totalCount) totalCount.textContent = total;
-    if (pendingCount) pendingCount.textContent = pending;
-    if (completedCount) completedCount.textContent = completed;
-    if (progressCount) progressCount.textContent = progress;
+    document.querySelector("#totalCount").textContent = total;
+    document.querySelector("#pendingCount").textContent = pending;
+    document.querySelector("#progressCount").textContent = progress;
+    document.querySelector("#completedCount").textContent = completed;
 
 }
+
