@@ -131,6 +131,33 @@
                 </div>
             </section>
 
+            <section class="project-summary">
+
+                <div class="summary-card">
+
+                    <h3>📈 Progreso</h3>
+
+                    <p id="projectProgress">0%</p>
+
+                </div>
+
+                <div class="summary-card">
+
+                    <h3>🚨 Prioridad Alta</h3>
+
+                    <p id="highPriorityCount">0</p>
+
+                </div>
+
+                <div class="summary-card">
+
+                    <h3>📅 Próxima entrega</h3>
+
+                    <p id="nextDeadline">-</p>
+
+                </div>
+
+            </section>
 
             <section class="recent-tasks">
 
@@ -139,6 +166,50 @@
                 <div class="search-box">
 
                     <input type="text" id="searchTask" placeholder="🔍 Buscar tarea...">
+
+                    <div class="sort-box">
+
+                        <label for="sortTasks">
+                            Ordenar por
+                        </label>
+
+                        <select id="sortTasks">
+
+                            <option value="date">
+                                Fecha límite
+                            </option>
+
+                            <option value="priority">
+                                Prioridad
+                            </option>
+
+                            <option value="title">
+                                Título (A-Z)
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <div class="filter-buttons">
+
+                    <button class="filter-btn active" data-filter="ALL">
+                        Todas
+                    </button>
+
+                    <button class="filter-btn" data-filter="TO_DO">
+                        🟡 Pendientes
+                    </button>
+
+                    <button class="filter-btn" data-filter="IN_PROGRESS">
+                        🔵 En progreso
+                    </button>
+
+                    <button class="filter-btn" data-filter="DONE">
+                        🟢 Completadas
+                    </button>
 
                 </div>
 

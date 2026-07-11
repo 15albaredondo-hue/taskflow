@@ -1,6 +1,12 @@
 // ==========================
 // DASHBOARD
 // ==========================
+// ==========================
+// FILTRO ACTUAL
+// ==========================
+
+let currentFilter = "ALL";
+let searchText = "";
 
 function loadTasks() {
 
@@ -8,8 +14,81 @@ function loadTasks() {
 
     if (!taskList) return;
 
-    const tasks = getTasks();
+    let tasks = getTasks();
 
+    const sortSelect = document.querySelector("#sortTasks");
+
+    const sortBy = sortSelect ? sortSelect.value : "date";
+
+    taskList.innerHTML = "";
+
+    // Filtrar por titulo
+
+    if (sortBy === "title") {
+
+        tasks.sort((a, b) =>
+            a.title.localeCompare(b.title)
+        );
+
+    }
+
+    // Filtrar por fecha
+
+    if (sortBy === "date") {
+
+        tasks.sort((a, b) =>
+            new Date(a.dueDate) - new Date(b.dueDate)
+        );
+
+    }
+    // Filtrar por estado
+
+    if (currentFilter !== "ALL") {
+
+        tasks = tasks.filter(task =>
+            task.status === currentFilter
+        );
+
+    }
+
+    // Filtrar por texto
+
+    if (searchText !== "") {
+
+        tasks = tasks.filter(task =>
+
+            task.title
+                .toLowerCase()
+                .includes(searchText)
+
+            ||
+
+            task.description
+                .toLowerCase()
+                .includes(searchText)
+
+        );
+
+    }
+
+    // Filtrar por prioridad
+
+    if (sortBy === "priority") {
+
+        const priorities = {
+
+            Alta: 1,
+            Media: 2,
+            Baja: 3
+
+        };
+
+        tasks.sort((a, b) =>
+            priorities[a.priority] -
+            priorities[b.priority]
+        );
+
+    }
     taskList.innerHTML = "";
 
     tasks.forEach(task => {
@@ -115,14 +194,14 @@ function loadTasks() {
 
         const statusSelect = card.querySelector(".status-select");
 
-statusSelect.addEventListener("change", (event) => {
+        statusSelect.addEventListener("change", (event) => {
 
-    updateTaskStatus(
-        task.id,
-        event.target.value
-    );
+            updateTaskStatus(
+                task.id,
+                event.target.value
+            );
 
-});
+        });
 
     });
 
@@ -157,3 +236,128 @@ function updateStats() {
 
 }
 
+// ==========================
+// FILTRAR TAREAS
+// ==========================
+
+function initFilters() {
+
+    const filterButtons = document.querySelectorAll(".filter-btn");
+
+    filterButtons.forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            currentFilter = button.dataset.filter;
+
+            filterButtons.forEach(btn =>
+                btn.classList.remove("active")
+            );
+
+            button.classList.add("active");
+
+            loadTasks();
+
+        });
+
+    });
+
+}
+
+// ==========================
+// BUSCADOR
+// ==========================
+
+function initSearch() {
+
+    const searchInput = document.querySelector("#searchTask");
+
+    if (!searchInput) return;
+
+    searchInput.addEventListener("input", (event) => {
+
+        searchText = event.target.value.toLowerCase();
+
+        loadTasks();
+
+    });
+
+
+}
+
+// ==========================
+// ORDENAR TAREAS
+// ==========================
+
+function initTaskSorting() {
+
+    const sortSelect = document.querySelector("#sortTasks");
+
+    if (!sortSelect) return;
+
+    sortSelect.addEventListener("change", () => {
+
+        loadTasks();
+
+    });
+
+}
+
+// ==========================
+// RESUMEN DEL PROYECTO
+// ==========================
+
+function updateProjectSummary() {
+
+    const tasks = getTasks();
+
+    // Total de tareas
+
+    const total = tasks.length;
+
+    // Completadas
+
+    const completed = tasks.filter(task =>
+        task.status === "DONE"
+    ).length;
+
+    // Porcentaje completado
+
+    const progress = total === 0
+        ? 0
+        : Math.round((completed / total) * 100);
+
+    document.querySelector("#projectProgress").textContent =
+        `${progress}%`;
+
+    // Prioridad alta
+
+    const highPriority = tasks.filter(task =>
+        task.priority === "Alta"
+    ).length;
+
+    document.querySelector("#highPriorityCount").textContent =
+        highPriority;
+
+    // Próxima entrega
+
+    const pendingTasks = tasks
+        .filter(task => task.status !== "DONE")
+        .sort((a, b) =>
+            new Date(a.dueDate) - new Date(b.dueDate)
+        );
+
+    const nextDeadline = document.querySelector("#nextDeadline");
+
+    if (pendingTasks.length > 0) {
+
+        nextDeadline.textContent =
+            pendingTasks[0].dueDate;
+
+    } else {
+
+        nextDeadline.textContent = "Sin tareas";
+
+    }
+
+}

@@ -12,8 +12,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     loadTaskToEdit();
 
+    initFilters();
+
+    initSearch();
+
+    initTaskSorting();
+
     loadTasks();
 
     updateStats();
+
+    updateProjectSummary();
 
 });

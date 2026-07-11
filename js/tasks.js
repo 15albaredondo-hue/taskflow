@@ -139,6 +139,8 @@ function deleteTask(id) {
 
     updateStats();
 
+    updateProjectSummary();
+
     showToast("Tarea eliminada correctamente.", "success");
 
 }
