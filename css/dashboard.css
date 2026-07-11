@@ -390,3 +390,92 @@ background:#10B981;
 
 }
 
+/*==========================
+    BARRA DE PROGRESO
+==========================*/
+
+.progress-container{
+
+    width:100%;
+
+    height:12px;
+
+    background:#E5E7EB;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    margin:15px 0;
+
+}
+
+.progress-bar{
+
+    height:100%;
+
+    width:0%;
+
+    background:linear-gradient(
+        90deg,
+        #3B82F6,
+        #10B981
+    );
+
+    transition:.5s;
+
+}
+
+/*==========================
+    TAREAS VENCIDAS
+==========================*/
+
+.overdue{
+
+    border-left:6px solid #EF4444;
+
+}
+
+.overdue-label{
+
+    color:#EF4444;
+
+    font-weight:700;
+
+    margin:10px 0;
+
+}
+
+.chart-section{
+
+    margin:40px 0;
+
+}
+
+.chart-card{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:16px;
+
+    box-shadow:var(--shadow);
+
+    max-width:500px;
+
+    margin:auto;
+
+}
+
+.chart-card h2{
+
+    margin-bottom:20px;
+
+}
+
+#tasksChart{
+
+    max-height:300px;
+
+}

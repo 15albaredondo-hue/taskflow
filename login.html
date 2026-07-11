@@ -28,114 +28,118 @@
 
 <body>
 
-    
 
-        <div class="login-container">
 
-            <div class="login-card">
+    <div class="login-container">
 
-                <div class="login-header">
+        <div class="login-card">
 
-                    <h1>
+            <div class="login-header">
 
-                        TaskFlow
+                <h1>
 
-                    </h1>
+                    TaskFlow
 
-                    <p>
+                </h1>
 
-                        Bienvenido de nuevo 👋
+                <p>
 
-                    </p>
+                    Bienvenido de nuevo 👋
 
-                    <span>
+                </p>
 
-                        Inicia sesión para acceder a tus proyectos.
+                <span>
 
-                    </span>
+                    Inicia sesión para acceder a tus proyectos.
 
-                </div>
-
-                <form id="loginForm" class="login-form">
-
-                    <div class="input-group">
-
-                        <label for="email">
-
-                            Correo electrónico
-
-                        </label>
-
-                        <div class="input-icon">
-
-                            <i class="fa-solid fa-envelope"></i>
-
-                            <input id="email" type="email" placeholder="ejemplo@email.com" required>
-
-                        </div>
-
-                    </div>
-
-                    <div class="input-group">
-
-                        <label for="password">
-
-                            Contraseña
-
-                        </label>
-
-                        <div class="input-icon">
-
-                            
-
-                            <input id="password" type="password" placeholder="Introduce tu contraseña" required>
-
-                            <button type="button" class="toggle-password">
-
-                                <i class="fa-solid fa-eye"></i>
-
-                            </button>
-
-                        </div>
-
-                    </div>
-                    <div class="remember">
-
-                        <label>
-
-                            <input type="checkbox">
-
-                            Recordarme
-
-                        </label>
-
-                    </div>
-
-                    <button type="submit">
-
-                        Iniciar sesión
-
-                    </button>
-
-                </form>
-
-                <div class="login-footer">
-                    <p>
-                        ¿No tienes cuenta?
-                        <a href="#">
-                            Regístrate
-                        </a>
-                    </p>
-                </div>
+                </span>
 
             </div>
 
-        </div>
-        <script src="js/storage.js"></script>
-        <script src="js/toast.js"></script>
-        <script src="js/login.js"></script>
-        <script src="js/tasks.js"></script>
-        <script src="js/dashboard.js"></script>
-        <script src="js/app.js"></script>
+            <form id="loginForm" class="login-form">
 
-        </body>
+                <div class="input-group">
+
+                    <label for="email">
+
+                        Correo electrónico
+
+                    </label>
+
+                    <div class="input-icon">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        <input id="email" type="email" placeholder="ejemplo@email.com" required>
+
+                    </div>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label for="password">
+
+                        Contraseña
+
+                    </label>
+
+                    <div class="input-icon">
+
+
+
+                        <input id="password" type="password" placeholder="Introduce tu contraseña" required>
+
+                        <button type="button" class="toggle-password">
+
+                            <i class="fa-solid fa-eye"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+                <div class="remember">
+
+                    <label>
+
+                        <input type="checkbox">
+
+                        Recordarme
+
+                    </label>
+
+                </div>
+
+                <button type="submit">
+
+                    Iniciar sesión
+
+                </button>
+
+            </form>
+
+            <div class="login-footer">
+                <p>
+                    ¿No tienes cuenta?
+                    <a href="#">
+                        Regístrate
+                    </a>
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+    <script src="js/storage.js"></script>
+    <script src="js/toast.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/tasks/taskForm.js"></script>
+    <script src="js/tasks/taskCounter.js"></script>
+    <script src="js/tasks/taskEdit.js"></script>
+    <script src="js/tasks/taskDelete.js"></script>
+    <script src="js/tasks/taskStatus.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/app.js"></script>
+
+</body>

@@ -129,6 +129,8 @@
                     <p id="totalCount">0</p>
 
                 </div>
+
+
             </section>
 
             <section class="project-summary">
@@ -136,6 +138,13 @@
                 <div class="summary-card">
 
                     <h3>📈 Progreso</h3>
+
+                    <div class="progress-container">
+
+                        <div class="progress-bar" id="projectProgressBar">
+                        </div>
+
+                    </div>
 
                     <p id="projectProgress">0%</p>
 
@@ -158,6 +167,19 @@
                 </div>
 
             </section>
+
+            <section class="chart-section">
+
+                <div class="chart-card">
+
+                    <h2>📊 Estado de las tareas</h2>
+
+                    <canvas id="tasksChart"></canvas>
+
+                </div>
+
+            </section>
+
 
             <section class="recent-tasks">
 
@@ -211,6 +233,10 @@
                         🟢 Completadas
                     </button>
 
+                    <button class="filter-btn" data-filter="OVERDUE">
+                        🔴 Vencidas
+                    </button>
+
                 </div>
 
 
@@ -229,11 +255,27 @@
 
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
     <script src="js/storage.js"></script>
     <script src="js/toast.js"></script>
     <script src="js/login.js"></script>
-    <script src="js/tasks.js"></script>
-    <script src="js/dashboard.js"></script>
+    <script src="js/tasks/taskForm.js"></script>
+    <script src="js/tasks/taskCounter.js"></script>
+    <script src="js/tasks/taskEdit.js"></script>
+    <script src="js/tasks/taskDelete.js"></script>
+    <script src="js/tasks/taskStatus.js"></script>
+    <script src="js/dashboard/filters.js"></script>
+    <script src="js/dashboard/search.js"></script>
+    <script src="js/dashboard/sorting.js"></script>
+    <script src="js/dashboard/taskFilters.js"></script>
+    <script src="js/dashboard/taskCard.js"></script>
+    <script src="js/dashboard/taskEvents.js"></script>
+    <script src="js/dashboard/stats.js"></script>
+    <script src="js/dashboard/dashboard.js"></script>
+    <script src="js/dashboard/stats.js"></script>
+    <script src="js/dashboard/summary.js"></script>
+    <script src="js/dashboard/charts.js"></script>
     <script src="js/app.js"></script>
 
 </body>
