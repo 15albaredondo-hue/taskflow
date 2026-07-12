@@ -41,6 +41,12 @@ TaskFlow es una aplicación orientada a la organización de tareas personales me
 
 ---
 
+## 🌐 Demo
+
+🔗 https://taskflowmanager.rf.gd
+
+> **Importante:** La aplicación utiliza LocalStorage. Cada usuario dispone de su propio espacio de almacenamiento, por lo que al acceder por primera vez no habrá tareas creadas. Debes crearlas, para ver el funcionamiento de la aplicacion y todas sus funcionalidades. 
+
 # 📷 Capturas
 
 > Añadir aquí imágenes del proyecto.
