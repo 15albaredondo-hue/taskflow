@@ -23,7 +23,15 @@ document.addEventListener("DOMContentLoaded", () => {
     updateStats();
 
     updateProjectSummary();
-    
+
     updateChart();
+
+    showTaskNotifications();
+
+    initTheme();
+
+    initExportCSV();
+    
+    initExportPDF();
 
 });

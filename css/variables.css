@@ -2,49 +2,59 @@
    VARIABLES GLOBALES
 =========================== */
 
-:root{
+:root {
 
     /* Colores principales */
 
-    --primary-color:#2563EB;
-    --primary-dark:#1E3A8A;
+    --primary-color: #2563EB;
+    --primary-dark: #1E3A8A;
 
     /* Colores secundarios */
 
-    --secondary-color:#10B981;
+    --secondary-color: #10B981;
 
     /* Fondo */
 
-    --background:#F8FAFC;
+    --background: #F8FAFC;
 
     /* Tarjetas */
 
-    --card-background:#FFFFFF;
+    --card-background: #FFFFFF;
 
     /* Texto */
 
-    --text-color:#1F2937;
+    --text-color: #1F2937;
 
-    --text-light:#6B7280;
+    --text-light: #6B7280;
 
     /* Bordes */
 
-    --border-color:#E5E7EB;
+    --border-color: #E5E7EB;
 
     /* Error */
 
-    --danger:#EF4444;
+    --danger: #EF4444;
 
     /* Radios */
 
-    --radius:12px;
+    --radius: 12px;
 
     /* Sombras */
 
-    --shadow:0px 8px 20px rgba(0,0,0,.08);
+    --shadow: 0px 8px 20px rgba(0, 0, 0, .08);
 
     /* Fuente */
 
-    --font-family:'Inter',sans-serif;
+    --font-family: 'Inter', sans-serif;
+
+    body.dark {
+
+        --background: #0F172A;
+
+        --primary-color: #818CF8;
+
+        --primary-dark: #1E293B;
+
+    }
 
 }
