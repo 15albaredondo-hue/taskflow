@@ -46,24 +46,24 @@ TaskFlow es una aplicación orientada a la organización de tareas personales me
 > Añadir aquí imágenes del proyecto.
 
 ## index
-![WEB DE INICIO](image-6.png) //SI LE DAS A LOGIN TE LLEVA A login.html//
+![WEB DE INICIO](screenshots/image-6.png) //SI LE DAS A LOGIN TE LLEVA A login.html//
 
 ## login
 
-![CORREO/CONTRASEÑA](image-7.png) //SI METES USUARIO Y CONTRASEÑA TE LLEVA A dashboard.html y si tienes alguna tarea vencida te salta la notificación//
+![CORREO/CONTRASEÑA](screenshots/image-7.png) //SI METES USUARIO Y CONTRASEÑA TE LLEVA A dashboard.html y si tienes alguna tarea vencida te salta la notificación//
 
 ## Dashboard
 
 ![Dashboard]
 
-![ENCABEZADO](image.png) //ENCABEZADO//
-![NOTIFICACION TAREA VENCIDA](image-1.png) //NOTIFICACION TAREA VENCIDA//
-![ESTADO DE LAS TAREAS](image-2.png) //ESTADO DE LAS TAREAS//
-![MIS TAREAS ORDENADAS SEGUN PRIORIDAD/FECHA/A-Z/ Y POSIBILIDAD DE EXPORTAR EN PDF O CSV ](image-3.png)//MIS TAREAS ORDENADAS SEGUN PRIORIDAD/FECHA/A-Z/ Y POSIBILIDAD DE EXPORTAR EN PDF O CSV//
-![NOCHE](image-8.png) //MODO NOCTURNO//
+![ENCABEZADO](screenshots/image.png) //ENCABEZADO//
+![NOTIFICACION TAREA VENCIDA](screenshots/image-1.png) //NOTIFICACION TAREA VENCIDA//
+![ESTADO DE LAS TAREAS](screenshots/image-2.png) //ESTADO DE LAS TAREAS//
+![MIS TAREAS ORDENADAS SEGUN PRIORIDAD/FECHA/A-Z/ Y POSIBILIDAD DE EXPORTAR EN PDF O CSV ](screenshots/image-3.png)//MIS TAREAS ORDENADAS SEGUN PRIORIDAD/FECHA/A-Z/ Y POSIBILIDAD DE EXPORTAR EN PDF O CSV//
+![NOCHE](screenshots/image-8.png) //MODO NOCTURNO//
 
 ## Nueva tarea
-![FORMULARIO CREAR NUEVA TAREA](image-5.png) //FORMULARIO CREAR NUEVA TAREA//
+![FORMULARIO CREAR NUEVA TAREA](screenshots/image-5.png) //FORMULARIO CREAR NUEVA TAREA//
 
 
 # 🛠 Tecnologías utilizadas
