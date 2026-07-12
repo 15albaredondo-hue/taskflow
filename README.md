@@ -193,29 +193,7 @@ Toda la información se almacena mediante **LocalStorage**, permitiendo mantener
 
 ---
 
-# ▶️ Instalación
 
-Clonar el repositorio
-
-```bash
-git clone https://github.com/TU-USUARIO/taskflow.git
-```
-
-Entrar en la carpeta
-
-```bash
-cd taskflow
-```
-
-Abrir
-
-```text
-index.html
-```
-
-o ejecutar mediante un servidor local (Live Server, XAMPP, etc.).
-
----
 
 # 📌 Mejoras futuras
 
